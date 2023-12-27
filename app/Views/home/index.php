@@ -24,63 +24,6 @@ $produk_men = [
         sentuhan akhir yang mengilap. Bagian atas dibedakan dengan kulit paten merah muda pada kotak kaki, overlay tumit dan
         penutup kerah, menampilkan Sayap tradisional yang dicap di Obsidian di sisi samping.",
     ],
-    [
-        "judul" => "Nike Air Jordan 1 Mid",
-        "harga" => "5.500.000",
-        "deskripsi" => "Skema Black Toe yang terkenal dibiarkan apa adanya dari segi warna, sementara bahannya diubah menjadi
-        nilon di bagian depan dan suede di sepanjang tumit. Garis kulit putih di bawahnya, membungkus ke atas ke lipatan pergelangan kaki yang latar
-        belakang abu-abunya meniru motif pilling yang disengaja.",
-    ],
-    [
-        "judul" => "Nike Air Jordan 1 Mid",
-        "harga" => "5.500.000",
-        "deskripsi" => "Air Jordan 1 Mid SE Igloo Island TD menghadirkan gaya lapangan penuh
-        dan kenyamanan premium ke tampilan ikonik.",
-    ],
-    [
-        "judul" => "Nike Air Jordan 1 Mid",
-        "harga" => "5.500.000",
-        "deskripsi" => "Menggunakan skema warna Hitam, Merah Chili, dan Putih. Air Jordan 1 mid-top
-        ini menampilkan kulit halus berwarna putih di bagian toe box, eyelet atas, flap pergelangan kaki, tumit, dan
-        midsole. Kulit hitam jatuh menutupi lapisan luar, panel samping, kerah pergelangan kaki, tali, lapisan dalam, logo Wings, dan sol karet.",
-    ],
-    [
-        "judul" => "Nike Air Jordan 1 Low",
-        "harga" => "5.500.000",
-        "deskripsi" => "Air Jordan 1 Low Pinksicle menampilkan dasar kulit biasa, yang kali ini
-        menggabungkan warna pink pada toebox, swoosh dan tumit, dan hitam dan putih pada pasangan lainnya.",
-    ],
-    [
-        "judul" => "Nike Air Jordan 1 Low",
-        "harga" => "5.500.000",
-        "deskripsi" => "Air Jordan 1 Low Light Madder Root menampilkan upper suede off-white dengan overlay
-        kulit coral yang terinspirasi dari madder root. Branding khas seperti Swoosh, logo Jordan Wings dan
-        23 bordir pada loop renda berwarna hijau muda.",
-    ],
-    [
-        "judul" => "Nike Air Jordan 1 Low",
-        "harga" => "5.500.000",
-        "deskripsi" => "Air Jordan 1 Low Black Cactus Flower menampilkan toebox pink fuchsia yang serasi
-        dengan Swoosh dan outsole. Basis kulit putih dikontraskan dengan lapisan suede hitam, meningkatkan nuansa iterasi
-        yang nyaman.",
-    ],
-    [
-        "judul" => "Nike Air Jordan 1 Coral",
-        "harga" => "5.500.000",
-        "deskripsi" => "Nike Dunk Low Next Nature (Pale Coral) memiliki desain ramah lingkungan yang terbuat
-        dari kulit daur ulang berwarna putih dan pink pucat, kontras dengan sol dalam hijau neon dengan cap Move To Zerobranding di atasnya.",
-    ],
-    [
-        "judul" => "Nike Air Jordan 1 Mid",
-        "harga" => "5.500.000",
-        "deskripsi" => "Sepatu yang terbuat dari leather didesain sporty dengan detail neat stitching, eyelets dan outsole yang nyaman ketika dipakai.",
-    ],
-    [
-        "judul" => "Nike Air Jordan 1 Low",
-        "harga" => "5.500.000",
-        "deskripsi" => "NIKE Air Jordan 1 Low GS Light Arctic Orange Pink merupakan sepatu olahraga berbahan leather upper yang didesain trendy
-        & sporty dengan neat stitching dan outsole yang nyaman saat digunakan. Ideal untuk berolahraga maupun sehari-hari.",
-    ],
 ];
 
 ?>
@@ -93,7 +36,7 @@ $produk_men = [
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- =============CSS================ -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="<?= base_url('assets') ?>/css/style.css">
     <!-- =============Remix Icons================ -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <title><?= NamaWebsite ?></title>
@@ -136,7 +79,7 @@ $produk_men = [
     <main class="main">
         <section class="beranda" id="beranda">
             <div class="beranda__container container grid">
-                <img src="assets\gambar\home_img2.png" class="beranda__img">
+                <img src="<?= base_url('assets') ?>/img/home_img2.png" class="beranda__img">
 
                 <div class="beranda__data">
                     <h1 class="beranda__judul">Toko Sepatu <br> No.1 di Ciampea</h1>
@@ -153,7 +96,7 @@ $produk_men = [
         <!-- =============Tentang Kami================ -->
         <section class="tentang section container" id="tentang">
             <div class="tentang__container grid">
-                <img src="assets\gambar\about_img.jpg" alt="" class="tentang__img">
+                <img src="<?= base_url('assets') ?>/img/about_img.jpg" alt="" class="tentang__img">
 
                 <div class="tentang__data">
                     <h2 class="section__judul tentang__judul">
@@ -205,7 +148,7 @@ $produk_men = [
                 foreach ($produk_men as $data) :
                 ?>
                     <article class="produk">
-                        <img src="<?= "assets/gambar/" . $no . "-removebg-preview.png" ?>" alt="" class="produk__img">
+                        <img src="<?= base_url('assets/') . "img/" . "0$no-removebg-preview.png" ?>" alt="" class="produk__img">
                         <div class="produk__data">
                             <h1 class="produk__judul"><?= $data['judul'] ?></h1>
                             <span class="produk__harga"><?= $data['harga'] ?></span>
@@ -300,7 +243,7 @@ $produk_men = [
                     <li class="footer__informasi">
                         <div class="footer__sosmed">
                             <a href="https://www.instagram.com/senikersku/" class="footer__sosmed-link">
-                                <img src="assets\gambar\ig.png" alt="" class="footer__ig">@Spokatku
+                                <img src="<?= base_url('assets') ?>/img/ig.png" alt="" class="footer__ig">@Spokatku
                             </a>
                         </div>
                     </li>
@@ -313,10 +256,10 @@ $produk_men = [
                 </h3>
 
                 <div class="footer__pembayaran">
-                    <img src="assets\gambar\logo dana.png" alt="" class="footer__pembayaran-logo">
-                    <img src="assets\gambar\logo gopay.png" alt="" class="footer__pembayaran-logo">
-                    <img src="assets\gambar\logo linkaja.png" alt="" class="footer__pembayaran-logo">
-                    <img src="assets\gambar\logo ovo.png" alt="" class="footer__pembayaran-logo">
+                    <img src="<?= base_url('assets') ?>/img/logo dana.png" alt="" class="footer__pembayaran-logo">
+                    <img src="<?= base_url('assets') ?>/img/logo gopay.png" alt="" class="footer__pembayaran-logo">
+                    <img src="<?= base_url('assets') ?>/img/logo linkaja.png" alt="" class="footer__pembayaran-logo">
+                    <img src="<?= base_url('assets') ?>/img/logo ovo.png" alt="" class="footer__pembayaran-logo">
                 </div>
             </div>
         </div>
@@ -325,7 +268,7 @@ $produk_men = [
     </footer>
 
     <!-- =============Main Javascript================ -->
-    <script src="assets/javascript/main.js"></script>
+    <script src="<?= base_url('assets') ?>/javascript/main.js"></script>
 </body>
 
 </html>
