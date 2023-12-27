@@ -27,6 +27,8 @@
 
             <?= $this->include('partials/navbar'); ?>
 
+            <?= $this->include('partials/sidebar'); ?>
+
             <!-- Main Content -->
             <div class="main-content">
                 <?= $this->renderSection('content'); ?>
