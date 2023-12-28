@@ -48,4 +48,41 @@ class CategoryController extends BaseController
 
         return redirect()->to(site_url('admin/categories'))->with('success', 'Add Category Successfully!');
     }
+
+    public function edit($id)
+    {
+        return view('categories/edit', [
+            'category' => $this->categoryModel->find($id)
+        ]);
+    }
+
+    public function update($id)
+    {
+        if (!$this->request->is('post')) {
+            return redirect()->to(site_url('admin/categories/edit/' . $id));
+        }
+
+        if (!$this->validate([
+            'title' => 'required|min_length[4]',
+            'description' => 'required|min_length[4]'
+        ])) {
+            return redirect()->back()->withInput();
+        }
+
+        $data = [
+            'title' => $this->request->getPost('title'),
+            'description' => $this->request->getPost('description')
+        ];
+
+        $this->categoryModel->update($id, $data);
+
+        return redirect()->to(site_url('admin/categories'))->with('success', 'Edit Category Successfully!');
+    }
+
+    public function delete($id)
+    {
+        $this->categoryModel->delete($id);
+
+        return redirect()->to(site_url('admin/categories'))->with('success', 'Delete Category Successfully!');
+    }
 }

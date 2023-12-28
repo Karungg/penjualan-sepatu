@@ -48,8 +48,8 @@ Categories
                                         <td><?= $category['title'] ?></td>
                                         <td><?= $category['description'] ?></td>
                                         <td>
-                                            <a href="" class="btn btn-success">Edit</a>
-                                            <a href="#" class="btn btn-danger">Delete</a>
+                                            <a href="<?= base_url('admin/categories/edit/' . $category['id']) ?>" class="btn btn-success">Edit</a>
+                                            <a href="<?= base_url('admin/categories/delete/' . $category['id']) ?>" class="btn btn-danger">Delete</a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
