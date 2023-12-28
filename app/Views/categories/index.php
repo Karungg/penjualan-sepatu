@@ -38,7 +38,7 @@ Categories
                                     <th>No</th>
                                     <th>Title</th>
                                     <th>Description</th>
-                                    <th>Action</th>
+                                    <th class="text-center">Action</th>
                                 </tr>
                                 <?php
                                 $no = 1;
@@ -47,9 +47,13 @@ Categories
                                         <td><?= $no++ ?></td>
                                         <td><?= $category['title'] ?></td>
                                         <td><?= $category['description'] ?></td>
-                                        <td>
+                                        <td class="text-center">
                                             <a href="<?= base_url('admin/categories/edit/' . $category['id']) ?>" class="btn btn-success">Edit</a>
-                                            <a href="<?= base_url('admin/categories/delete/' . $category['id']) ?>" class="btn btn-danger">Delete</a>
+                                            <form action="<?= base_url('admin/categories/delete/' . $category['id']) ?>" method="post" class="d-inline" onsubmit="return confirm('Are You Sure?')">
+                                                <?= csrf_field() ?>
+                                                <input type="hidden" name="_method" value="DELETE">
+                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>

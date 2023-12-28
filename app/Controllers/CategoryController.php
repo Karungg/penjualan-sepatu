@@ -58,7 +58,7 @@ class CategoryController extends BaseController
 
     public function update($id)
     {
-        if (!$this->request->is('post')) {
+        if (!$this->request->is('put')) {
             return redirect()->to(site_url('admin/categories/edit/' . $id));
         }
 

@@ -24,9 +24,10 @@ Edit Category
                         <a href="<?= base_url('admin/categories') ?>" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Back</a>
                     </div>
                     <div class="card-body">
+                        <?php $errors = validation_errors() ?>
                         <?= form_open('admin/categories/edit/' . $category['id']) ?>
                         <?= csrf_field() ?>
-                        <?php $errors = validation_errors() ?>
+                        <input type="hidden" name="_method" value="PUT">
                         <div class="form-group">
                             <label for="title">Title</label>
                             <input type="text" class="form-control <?= (isset($errors['title'])) ? 'is-invalid' : '' ?>" id="title" name="title" value="<?= $category['title'] ?>">
