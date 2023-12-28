@@ -22,16 +22,17 @@
                     <div class="card-body">
                         <?= form_open('admin/categories/add') ?>
                         <?= csrf_field() ?>
+                        <?php $errors = validation_errors() ?>
                         <div class="form-group">
                             <label for="title">Title</label>
-                            <input type="text" class="form-control <?= (validation_errors('title') ? 'is-invalid' : '') ?>" id="title" name="title" value="<?= old('title') ?>">
+                            <input type="text" class="form-control <?= (isset($errors['title'])) ? 'is-invalid' : '' ?>" id="title" name="title" value="<?= old('title') ?>">
                             <div class="invalid-feedback">
                                 <?= validation_show_error('title') ?>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <input type="text" class="form-control <?= (validation_errors('description') ? 'is-invalid' : '') ?>" id="description" name="description" value="<?= old('description') ?>">
+                            <input type="text" class="form-control <?= (isset($errors['description'])) ? 'is-invalid' : '' ?>" id="description" name="description" value="<?= old('description') ?>">
                             <div class="invalid-feedback">
                                 <?= validation_show_error('description') ?>
                             </div>
