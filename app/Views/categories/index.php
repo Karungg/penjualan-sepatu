@@ -1,5 +1,9 @@
 <?= $this->extend('layouts/dashboard'); ?>
 
+<?= $this->section('title'); ?>
+Categories
+<?= $this->endSection('title'); ?>
+
 <?= $this->section('content'); ?>
 <section class="section">
     <div class="section-header">

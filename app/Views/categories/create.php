@@ -1,13 +1,17 @@
 <?= $this->extend('layouts/dashboard'); ?>
 
+<?= $this->section('title'); ?>
+Add Category
+<?= $this->endSection('title'); ?>
+
 <?= $this->section('content'); ?>
 <section class="section">
     <div class="section-header">
         <h1>Add Category</h1>
         <div class="section-header-breadcrumb">
             <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-            <div class="breadcrumb-item"><a href="#">Forms</a></div>
-            <div class="breadcrumb-item">Advanced Forms</div>
+            <div class="breadcrumb-item"><a href="<?= site_url('admin/categories') ?>">Categories</a></div>
+            <div class="breadcrumb-item">Add Category</div>
         </div>
     </div>
 
