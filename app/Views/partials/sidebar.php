@@ -12,6 +12,6 @@
             <li class="menu-header">Master Data</li>
             <li><a class="nav-link" href="<?= base_url('admin/categories') ?>"><i class="fas fa-tag"></i> <span>Categories</span></a></li>
             <li><a class="nav-link" href="<?= base_url('admin/products') ?>"><i class="fas fa-store"></i> <span>Products</span></a></li>
-            <li><a class="nav-link" href="<?= base_url('admin/users') ?>"><i class="far fa-user"></i> <span>Users</span></a></li>
+            <li><a class="nav-link" href="<?= base_url('admin/customers') ?>"><i class="far fa-user"></i> <span>Customers</span></a></li>
     </aside>
 </div>

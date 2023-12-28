@@ -1,16 +1,16 @@
 <?= $this->extend('layouts/dashboard'); ?>
 
 <?= $this->section('title'); ?>
-Categories
+Customers
 <?= $this->endSection('title'); ?>
 
 <?= $this->section('content'); ?>
 <section class="section">
     <div class="section-header">
-        <h1>Categories</h1>
+        <h1>Customers</h1>
         <div class="section-header-breadcrumb">
             <div class="breadcrumb-item active"><a href="<?= base_url('admin') ?>">Dashboard</a></div>
-            <div class="breadcrumb-item">Categories</div>
+            <div class="breadcrumb-item">Customers</div>
         </div>
     </div>
 
@@ -28,32 +28,28 @@ Categories
                     </div>
                 <?php endif ?>
                 <div class="card">
-                    <div class="card-header">
-                        <a href="<?= base_url('admin/categories/add') ?>" class="btn btn-primary"><i class="fas fa-plus"></i> Add Category</a>
-                    </div>
                     <div class="card-body p-0">
                         <div class="table-responsive">
                             <table class="table table-striped table-md text-center">
                                 <tr>
                                     <th>No</th>
-                                    <th>Title</th>
-                                    <th>Description</th>
+                                    <th>Full Name</th>
+                                    <th>Email</th>
+                                    <th>Address</th>
+                                    <th>Phone</th>
                                     <th>Action</th>
                                 </tr>
                                 <?php
                                 $no = 1;
-                                foreach ($categories as $category) : ?>
+                                foreach ($customers as $customer) : ?>
                                     <tr>
                                         <td><?= $no++ ?></td>
-                                        <td><?= $category['title'] ?></td>
-                                        <td><?= $category['description'] ?></td>
+                                        <td><?= $customer->fullname ?></td>
+                                        <td><?= $customer->email ?></td>
+                                        <td><?= $customer->address ?></td>
+                                        <td><?= $customer->phone ?></td>
                                         <td>
-                                            <a href="<?= base_url('admin/categories/edit/' . $category['id']) ?>" class="btn btn-success">Edit</a>
-                                            <form action="<?= base_url('admin/categories/delete/' . $category['id']) ?>" method="post" class="d-inline" onsubmit="return confirm('Are You Sure?')">
-                                                <?= csrf_field() ?>
-                                                <input type="hidden" name="_method" value="DELETE">
-                                                <button type="submit" class="btn btn-danger">Delete</button>
-                                            </form>
+                                            <a class="btn btn-success" href="<?= base_url('admin/customers/detail/' . $customer->id) ?>">Detail</a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>

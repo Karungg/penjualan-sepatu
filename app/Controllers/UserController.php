@@ -6,8 +6,24 @@ use App\Controllers\BaseController;
 
 class UserController extends BaseController
 {
+    protected $userModel;
+
+    public function __construct()
+    {
+        $this->userModel = new \App\Models\UserModel();
+    }
+
     public function index(): string
     {
-        return view('users/index');
+        return view('customers/index', [
+            'customers' => $this->userModel->findAll()
+        ]);
+    }
+
+    public function show($id)
+    {
+        return view('customers/detail', [
+            'customer' => $this->userModel->find($id)
+        ]);
     }
 }
