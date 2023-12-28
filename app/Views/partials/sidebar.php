@@ -10,6 +10,7 @@
             <li class="menu-header">Dashboard</li>
             <li><a href="<?= base_url('admin') ?>" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a></li>
             <li class="menu-header">Master Data</li>
+            <li><a class="nav-link" href="<?= base_url('admin/categories') ?>"><i class="fas fa-tag"></i> <span>Categories</span></a></li>
             <li><a class="nav-link" href="<?= base_url('admin/products') ?>"><i class="fas fa-store"></i> <span>Products</span></a></li>
             <li><a class="nav-link" href="<?= base_url('admin/users') ?>"><i class="far fa-user"></i> <span>Users</span></a></li>
     </aside>

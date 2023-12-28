@@ -8,8 +8,14 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 
 
-$routes->group('admin', ['filter' => 'role:admin', 'login'], static function ($routes) {
-    $routes->get('', [\App\Controllers\DashboardController::class, 'index']);
-    $routes->get('products', [\App\Controllers\ProductController::class, 'index']);
-    $routes->get('users', [\App\Controllers\UserController::class, 'index']);
+$routes->get('admin', 'DashboardController::index', ['filter' => 'role:admin', 'login']);
+
+$routes->group('admin/categories', ['filter' => 'role:admin', 'login'], static function ($routes) {
+    $routes->get('', [\App\Controllers\CategoryController::class, 'index']);
+});
+$routes->group('admin/products', ['filter' => 'role:admin', 'login'], static function ($routes) {
+    $routes->get('', [\App\Controllers\ProductController::class, 'index']);
+});
+$routes->group('admin/users', ['filter' => 'role:admin', 'login'], static function ($routes) {
+    $routes->get('', [\App\Controllers\UserController::class, 'index']);
 });
