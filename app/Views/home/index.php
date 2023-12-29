@@ -4,7 +4,7 @@
 <!-- =============Produk================ -->
 <section class="spt__laki section container" id="spt-laki">
     <h2 class="section__judul-center">
-        Produk
+        Produk Unggulan
     </h2>
 
     <main class="main1 bd-grid">
