@@ -39,7 +39,6 @@ Products
                                     <th>Product Name</th>
                                     <th>Description</th>
                                     <th>Product Price</th>
-                                    <th>Category</th>
                                     <th>Image</th>
                                     <th>Action</th>
                                 </tr>
@@ -52,7 +51,6 @@ Products
                                         <td><?= $product['product_name'] ?></td>
                                         <td><?= $product['description'] ?></td>
                                         <td><?= $product['product_price'] ?></td>
-                                        <td><?= $product['id_category'] ?></td>
                                         <td>
                                             <img src="<?= base_url('assets/img/' . $product['image']) ?>" alt="..." class="img-thumbnail" style="width: 50px;">
                                         </td>

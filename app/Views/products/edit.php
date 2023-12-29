@@ -27,6 +27,7 @@ Edit Product
                         <?= form_open_multipart('admin/products/edit/' . $product['id']) ?>
                         <?= csrf_field() ?>
                         <?php $errors = validation_errors() ?>
+                        <input type="hidden" name="_method" value="PUT">
                         <div class="form-group">
                             <label for="product_name">Product Name</label>
                             <input type="text" class="form-control <?= (isset($errors['product_name'])) ? 'is-invalid' : '' ?>" id="product_name" name="product_name" value="<?= $product['product_name'] ?>">

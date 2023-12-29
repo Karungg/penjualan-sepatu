@@ -84,11 +84,11 @@ class ProductController extends BaseController
             return redirect()->back()->withInput();
         }
 
-        $upload = $this->request->getFile('image');
-        $upload->move(WRITEPATH . '../public/assets/img/');
-
         $data = $this->productModel->find($id);
         @unlink('../public/assets/img/' . $data['image']);
+
+        $upload = $this->request->getFile('image');
+        $upload->move(WRITEPATH . '../public/assets/img/');
 
         $data = [
             'product_name' => $this->request->getPost('product_name'),
@@ -98,9 +98,9 @@ class ProductController extends BaseController
             'image' => $upload->getName(),
         ];
 
-        $this->productModel->insert($data);
+        $this->productModel->update($id, $data);
 
-        return redirect()->to(site_url('admin/products'))->with('success', 'Add Products Successfully!');
+        return redirect()->to(site_url('admin/products'))->with('success', 'Edit Product Successfully!');
     }
 
     public function delete($id)

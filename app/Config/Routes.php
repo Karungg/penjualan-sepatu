@@ -24,7 +24,7 @@ $routes->group('admin/products', ['filter' => 'role:admin', 'login'], static fun
     $routes->get('add', [\App\Controllers\ProductController::class, 'create']);
     $routes->post('add', [\App\Controllers\ProductController::class, 'store']);
     $routes->get('edit/(:num)', [\App\Controllers\ProductController::class, 'edit']);
-    $routes->put('edit', [\App\Controllers\ProductController::class, 'update']);
+    $routes->put('edit/(:num)', [\App\Controllers\ProductController::class, 'update']);
     $routes->delete('delete/(:num)', [\App\Controllers\ProductController::class, 'delete/$1']);
 });
 
