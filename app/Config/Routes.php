@@ -21,6 +21,7 @@ $routes->group('admin/categories', ['filter' => 'role:admin', 'login'], static f
 
 $routes->group('admin/products', ['filter' => 'role:admin', 'login'], static function ($routes) {
     $routes->get('', [\App\Controllers\ProductController::class, 'index']);
+    $routes->get('add', [\App\Controllers\ProductController::class, 'create']);
 });
 
 $routes->group('admin/customers', ['filter' => 'role:admin', 'login'], static function ($routes) {
