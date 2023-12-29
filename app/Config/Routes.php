@@ -22,6 +22,10 @@ $routes->group('admin/categories', ['filter' => 'role:admin', 'login'], static f
 $routes->group('admin/products', ['filter' => 'role:admin', 'login'], static function ($routes) {
     $routes->get('', [\App\Controllers\ProductController::class, 'index']);
     $routes->get('add', [\App\Controllers\ProductController::class, 'create']);
+    $routes->post('add', [\App\Controllers\ProductController::class, 'store']);
+    $routes->get('edit/(:num)', [\App\Controllers\ProductController::class, 'edit']);
+    $routes->put('edit', [\App\Controllers\ProductController::class, 'update']);
+    $routes->delete('delete/(:num)', [\App\Controllers\ProductController::class, 'delete/$1']);
 });
 
 $routes->group('admin/customers', ['filter' => 'role:admin', 'login'], static function ($routes) {

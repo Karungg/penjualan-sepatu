@@ -24,7 +24,7 @@ Add Product
                         <a href="<?= base_url('admin/products') ?>" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Back</a>
                     </div>
                     <div class="card-body">
-                        <?= form_open('admin/products/add') ?>
+                        <?= form_open_multipart('admin/products/add') ?>
                         <?= csrf_field() ?>
                         <?php $errors = validation_errors() ?>
                         <div class="form-group">
@@ -36,14 +36,14 @@ Add Product
                         </div>
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <input type="text" class="form-control <?= (isset($errors['description'])) ? 'is-invalid' : '' ?>" id="description" name="description" value="<?= old('description') ?>">
+                            <textarea class="form-control <?= (isset($errors['description'])) ? 'is-invalid' : '' ?>" id="description" name="description" value="<?= old('description') ?>" rows="3"></textarea>
                             <div class="invalid-feedback">
                                 <?= validation_show_error('description') ?>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="product_price">Product Price</label>
-                            <input type="text" class="form-control <?= (isset($errors['product_price'])) ? 'is-invalid' : '' ?>" id="product_price" name="product_price" value="<?= old('product_price') ?>">
+                            <input type="number" class="form-control <?= (isset($errors['product_price'])) ? 'is-invalid' : '' ?>" id="product_price" name="product_price" value="<?= old('product_price') ?>">
                             <div class="invalid-feedback">
                                 <?= validation_show_error('product_price') ?>
                             </div>

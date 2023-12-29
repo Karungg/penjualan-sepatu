@@ -36,14 +36,36 @@ Products
                             <table class="table table-striped table-md text-center">
                                 <tr>
                                     <th>No</th>
-                                    <th>Title</th>
+                                    <th>Product Name</th>
                                     <th>Description</th>
+                                    <th>Product Price</th>
+                                    <th>Category</th>
+                                    <th>Image</th>
                                     <th>Action</th>
                                 </tr>
-                                <td>No</td>
-                                <td>Title</td>
-                                <td>Description</td>
-                                <td>Action</td>
+                                <?php
+                                $no = 1;
+                                foreach ($products as $product) :
+                                ?>
+                                    <tr>
+                                        <td><?= $no++ ?></td>
+                                        <td><?= $product['product_name'] ?></td>
+                                        <td><?= $product['description'] ?></td>
+                                        <td><?= $product['product_price'] ?></td>
+                                        <td><?= $product['id_category'] ?></td>
+                                        <td>
+                                            <img src="<?= base_url('assets/img/' . $product['image']) ?>" alt="..." class="img-thumbnail" style="width: 50px;">
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-success" href="<?= base_url('admin/products/edit/' . $product['id']) ?>">Edit</a>
+                                            <form action="<?= base_url('admin/products/delete/' . $product['id']) ?>" method="post" class="d-inline" onsubmit="return confirm('Are You Sure?')">
+                                                <?= csrf_field() ?>
+                                                <input type="hidden" name="_method" value="DELETE">
+                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                <?php endforeach ?>
                             </table>
                         </div>
                     </div>
