@@ -1,25 +1,18 @@
 <!-- =============Header================ -->
 <header class="header" id="header">
     <nav class="nav container">
-        <a href="#beranda" class="nav__logo">
+        <a href="<?= base_url('') ?>" class="nav__logo">
             <i class="ri-store-line nav__logo-icon"></i>Maroal
         </a>
 
         <!-- =============Navigasi================ -->
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
-                <li class="nav__item">
-                    <a href="#beranda" class="nav__link active-link">Beranda</a>
-                </li>
-                <li class="nav__item">
-                    <a href="#tentang" class="nav__link">Tentang Kami</a>
-                </li>
-                <li class="nav__item">
-                    <a href="#produk" class="nav__link">Produk</a>
-                </li>
-                <li class="nav__item">
-                    <a href="#kontak-kami" class="nav__link">Kontak Kami</a>
-                </li>
+                <?php foreach ($categories as $category) : ?>
+                    <li class="nav__item">
+                        <a href="" class="nav__link"><?= $category['title'] ?></a>
+                    </li>
+                <?php endforeach ?>
             </ul>
 
             <!-- Icon Diambil dari Remix Icon -->

@@ -13,18 +13,18 @@
 </head>
 
 <body>
-    <?= $this->include('partials/header'); ?>
+    <?= $this->include('partials/home/header'); ?>
 
     <!-- =============Beranda================ -->
     <main class="main">
 
-        <?= $this->include('partials/beranda'); ?>
+        <?= $this->include('partials/home/beranda'); ?>
 
-        <?= $this->include('partials/about'); ?>
+        <?= $this->include('partials/home/about'); ?>
 
         <?= $this->renderSection('content'); ?>
 
-        <?= $this->include('partials/contact'); ?>
+        <?= $this->include('partials/home/contact'); ?>
 
     </main>
 

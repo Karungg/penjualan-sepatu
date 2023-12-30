@@ -12,7 +12,7 @@
                     <h1 class="produk__judul"><?= $product['product_name'] ?></h1>
                     <span class="produk__harga"><?= number_format($product['product_price']) ?></span>
                     <p class="produk__deskripsi"><?= $product['description'] ?></p>
-                    <a href="#" target="_blank" class="produk__button">Beli Sekarang</a>
+                    <a href="#" class="produk__button">Detail</a>
                 </div>
             </article>
         <?php endforeach ?>

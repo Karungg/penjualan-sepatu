@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <?= $this->include('partials/home/header'); ?>
+    <?= $this->include('partials/home/products_header'); ?>
 
     <!-- =============Beranda================ -->
     <main class="main">
