@@ -39,4 +39,12 @@ class Stock extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getAll()
+    {
+        $builder = $this->db->table('stocks');
+        $builder->join('products', 'products.id = stocks.id_product');
+        $query = $builder->get();
+        return $query->getResultArray();
+    }
 }

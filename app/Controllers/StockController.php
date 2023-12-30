@@ -19,7 +19,7 @@ class StockController extends BaseController
     public function index()
     {
         return view('stocks/index', [
-            'stocks' => $this->stockModel->findAll()
+            'stocks' => $this->stockModel->getAll()
         ]);
     }
 

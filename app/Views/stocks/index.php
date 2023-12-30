@@ -46,7 +46,7 @@ Stocks
                                 foreach ($stocks as $stock) : ?>
                                     <tr>
                                         <td><?= $no++ ?></td>
-                                        <td><?= $stock['id_product'] ?></td>
+                                        <td><?= $stock['product_name'] ?></td>
                                         <td><?= $stock['size'] ?></td>
                                         <td><?= $stock['quantity'] ?></td>
                                         <td>
