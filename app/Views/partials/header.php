@@ -28,13 +28,22 @@
             </div>
         </div>
 
-        <ul class="nav__list">
-            <li class="nav__item">
-                <a href="<?= base_url('register') ?>" class="nav__link">Daftar</a>
-            </li>
-            <li class="nav__item">
-                <a href="<?= base_url('login') ?>" class="nav__link">Login</a>
-            </li>
-        </ul>
+        <?php if (empty(user())) : ?>
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="<?= base_url('register') ?>" class="nav__link">Daftar</a>
+                </li>
+                <li class="nav__item">
+                    <a href="<?= base_url('login') ?>" class="nav__link">Login</a>
+                </li>
+            </ul>
+        <?php endif ?>
+        <?php if (in_groups('user')) : ?>
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="" class="nav__link">My Order</a>
+                </li>
+            </ul>
+        <?php endif ?>
     </nav>
 </header>
