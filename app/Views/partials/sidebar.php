@@ -14,5 +14,7 @@
             <li><a class="nav-link" href="<?= base_url('admin/products') ?>"><i class="fas fa-store"></i> <span>Products</span></a></li>
             <li><a class="nav-link" href="<?= base_url('admin/stocks') ?>"><i class="fas fa-boxes"></i> <span>Stocks</span></a></li>
             <li><a class="nav-link" href="<?= base_url('admin/customers') ?>"><i class="far fa-user"></i> <span>Customers</span></a></li>
+            <li class="menu-header">Transaction</li>
+            <li><a class="nav-link" href="<?= base_url('admin/orders') ?>"><i class="fas fa-money-bill"></i> <span>Orders</span></a></li>
     </aside>
 </div>

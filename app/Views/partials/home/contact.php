@@ -27,7 +27,7 @@
             </div>
         </div>
 
-        <form action="" method="post" class="kontak__kami-form">
+        <form action="#" class="kontak__kami-form">
             <div class="kontak__kami-inputs">
                 <div class="kontak__kami-konten">
                     <input type="email" placeholder=" " class="kontak__kami-input" name="email" required>

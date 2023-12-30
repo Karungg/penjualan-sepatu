@@ -25,7 +25,7 @@
             <ul class="footer__data">
                 <li class="footer__informasi">
                     <div class="footer__sosmed">
-                        <a href="https://www.instagram.com/azismh_/" class="footer__sosmed-link">
+                        <a href="https://www.instagram.com/azismh_/" target="_blank" class="footer__sosmed-link">
                             <img src="<?= base_url('assets') ?>/img/ig.png" alt="" class="footer__ig">@Maroal
                         </a>
                     </div>

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="<?= base_url('assets') ?>/css/style.css">
     <!-- =============Remix Icons================ -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <title>Sepatu</title>
+    <title>Maroal | Home</title>
 </head>
 
 <body>

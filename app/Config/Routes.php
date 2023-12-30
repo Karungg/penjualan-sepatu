@@ -38,6 +38,10 @@ $routes->group('admin/stocks', ['filter' => 'role:admin', 'login'], static funct
     $routes->delete('delete/(:num)', [\App\Controllers\StockController::class, 'delete/$1']);
 });
 
+$routes->group('admin/orders', ['filter' => 'role:admin', 'login'], static function ($routes) {
+    $routes->get('', [\App\Controllers\OrderController::class, 'index']);
+});
+
 $routes->group('admin/customers', ['filter' => 'role:admin', 'login'], static function ($routes) {
     $routes->get('', [\App\Controllers\UserController::class, 'index']);
     $routes->get('detail/(:num)', [\App\Controllers\UserController::class, 'show/$1']);
