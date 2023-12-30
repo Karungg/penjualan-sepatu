@@ -2,7 +2,7 @@
 <header class="header" id="header">
     <nav class="nav container">
         <a href="#beranda" class="nav__logo">
-            <i class="ri-store-line nav__logo-icon"></i>Spokatku
+            <i class="ri-store-line nav__logo-icon"></i>Maroal
         </a>
 
         <!-- =============Navigasi================ -->
@@ -27,5 +27,14 @@
                 <i class="ri-close-line"></i>
             </div>
         </div>
+
+        <ul class="nav__list">
+            <li class="nav__item">
+                <a href="<?= base_url('register') ?>" class="nav__link">Daftar</a>
+            </li>
+            <li class="nav__item">
+                <a href="<?= base_url('login') ?>" class="nav__link">Login</a>
+            </li>
+        </ul>
     </nav>
 </header>

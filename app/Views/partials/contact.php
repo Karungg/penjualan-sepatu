@@ -11,7 +11,7 @@
                     <h3 class="kontak__kami-sub">No. Whatsapp</h3>
                     <span class="kontak__kami-deskripsi">
                         <i class="ri-phone-line kontak__kami-icon">
-                            +62 895-3185-2238
+                            +62 895-1234-5678
                         </i>
                     </span>
                 </div>
@@ -20,7 +20,7 @@
                     <h3 class="kontak__kami-sub">Via Email</h3>
                     <span class="kontak__kami-deskripsi">
                         <i class="ri-mail-line kontak__kami-icon"></i>
-                        spokatku@gmail.com
+                        maroal@gmail.com
                         </i>
                     </span>
                 </div>

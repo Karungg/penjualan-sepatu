@@ -5,7 +5,7 @@
 
         <div class="tentang__data">
             <h2 class="section__judul tentang__judul">
-                Kenapa Harus Beli <br> Sepatu di Spokatku?
+                Kenapa Harus Beli <br> Sepatu di Maroal?
             </h2>
 
             <p class="tentang__deskripsi">

@@ -3,7 +3,7 @@
     <div class="footer__container container grid">
         <div class="footer__konten">
             <a href="#" class="footer__logo">
-                <i class="ri-store-line footer__logo-icon"></i>Spokatku
+                <i class="ri-store-line footer__logo-icon"></i>Maroal
             </a>
         </div>
 
@@ -13,7 +13,7 @@
             <ul class="footer__data">
                 <li class="footer__informasi">
                     <i class="ri-map-pin-line">
-                        Jl. Dramaga, Kota Bogor, Jawa Barat <br><br>
+                        Jl. Ciomas, Kota Bogor, Jawa Barat <br><br>
                     </i>
                 </li>
             </ul>
@@ -25,8 +25,8 @@
             <ul class="footer__data">
                 <li class="footer__informasi">
                     <div class="footer__sosmed">
-                        <a href="https://www.instagram.com/senikersku/" class="footer__sosmed-link">
-                            <img src="<?= base_url('assets') ?>/img/ig.png" alt="" class="footer__ig">@Spokatku
+                        <a href="https://www.instagram.com/azismh_/" class="footer__sosmed-link">
+                            <img src="<?= base_url('assets') ?>/img/ig.png" alt="" class="footer__ig">@Maroal
                         </a>
                     </div>
                 </li>
@@ -47,5 +47,5 @@
         </div>
     </div>
 
-    <p class="footer__copyright">&#169; Spokatku. All rights reserved</p>
+    <p class="footer__copyright">&#169; Maroal. All rights reserved</p>
 </footer>
