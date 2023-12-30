@@ -37,26 +37,28 @@ class StockController extends BaseController
         }
 
         if (!$this->validate([
-            'title' => 'required|min_length[4]',
-            'description' => 'required|min_length[4]'
+            'id_product' => 'required|min_length[1]',
+            'size' => 'required|min_length[2]',
+            'quantity' => 'required|min_length[2]'
         ])) {
             return redirect()->back()->withInput();
         }
 
         $data = [
-            'title' => $this->request->getPost('title'),
-            'description' => $this->request->getPost('description')
+            'id_product' => $this->request->getPost('id_product'),
+            'size' => $this->request->getPost('size'),
+            'quantity' => $this->request->getPost('quantity'),
         ];
 
         $this->stockModel->insert($data);
 
-        return redirect()->to(site_url('admin/stocks'))->with('success', 'Add Category Successfully!');
+        return redirect()->to(site_url('admin/stocks'))->with('success', 'Add Stock Successfully!');
     }
 
     public function edit($id)
     {
         return view('stocks/edit', [
-            'category' => $this->stockModel->find($id)
+            'stock' => $this->stockModel->find($id)
         ]);
     }
 
@@ -67,26 +69,26 @@ class StockController extends BaseController
         }
 
         if (!$this->validate([
-            'title' => 'required|min_length[4]',
-            'description' => 'required|min_length[4]'
+            'size' => 'required|min_length[2]',
+            'quantity' => 'required|min_length[2]'
         ])) {
             return redirect()->back()->withInput();
         }
 
         $data = [
-            'title' => $this->request->getPost('title'),
-            'description' => $this->request->getPost('description')
+            'size' => $this->request->getPost('size'),
+            'quantity' => $this->request->getPost('quantity'),
         ];
 
         $this->stockModel->update($id, $data);
 
-        return redirect()->to(site_url('admin/stocks'))->with('success', 'Edit Category Successfully!');
+        return redirect()->to(site_url('admin/stocks'))->with('success', 'Edit Stock Successfully!');
     }
 
     public function delete($id)
     {
         $this->stockModel->delete($id);
 
-        return redirect()->to(site_url('admin/stocks'))->with('success', 'Delete Category Successfully!');
+        return redirect()->to(site_url('admin/stocks'))->with('success', 'Delete Stock Successfully!');
     }
 }

@@ -31,22 +31,22 @@ Add Stock
                             <label>Product</label>
                             <select class="form-control select2" name="id_product">
                                 <?php foreach ($products as $product) : ?>
-                                    <option value="<?= $product['id'] ?>"><?= $product['title'] ?></option>
+                                    <option value="<?= $product['id'] ?>"><?= $product['product_name'] ?></option>
                                 <?php endforeach ?>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="title">Title</label>
-                            <input type="text" class="form-control <?= (isset($errors['title'])) ? 'is-invalid' : '' ?>" id="title" name="title" value="<?= old('title') ?>">
+                            <label for="size">Size</label>
+                            <input type="number" class="form-control <?= (isset($errors['size'])) ? 'is-invalid' : '' ?>" id="size" name="size" value="<?= old('size') ?>">
                             <div class="invalid-feedback">
-                                <?= validation_show_error('title') ?>
+                                <?= validation_show_error('size') ?>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="description">Description</label>
-                            <input type="text" class="form-control <?= (isset($errors['description'])) ? 'is-invalid' : '' ?>" id="description" name="description" value="<?= old('description') ?>">
+                            <label for="quantity">Quantity</label>
+                            <input type="number" class="form-control <?= (isset($errors['quantity'])) ? 'is-invalid' : '' ?>" id="quantity" name="quantity" value="<?= old('quantity') ?>">
                             <div class="invalid-feedback">
-                                <?= validation_show_error('description') ?>
+                                <?= validation_show_error('quantity') ?>
                             </div>
                         </div>
                         <div class="form-group text-right">

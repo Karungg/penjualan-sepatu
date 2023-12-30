@@ -1,17 +1,17 @@
 <?= $this->extend('layouts/dashboard'); ?>
 
 <?= $this->section('title'); ?>
-Edit Category
+Edit Stock
 <?= $this->endSection('title'); ?>
 
 <?= $this->section('content'); ?>
 <section class="section">
     <div class="section-header">
-        <h1>Edit Category</h1>
+        <h1>Edit Stock</h1>
         <div class="section-header-breadcrumb">
             <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-            <div class="breadcrumb-item"><a href="<?= site_url('admin/categories') ?>">Categories</a></div>
-            <div class="breadcrumb-item">Edit Category</div>
+            <div class="breadcrumb-item"><a href="<?= site_url('admin/stocks') ?>">Stocks</a></div>
+            <div class="breadcrumb-item">Edit Stock</div>
         </div>
     </div>
 
@@ -21,25 +21,29 @@ Edit Category
             <div class="col-12 col-md-12 col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <a href="<?= base_url('admin/categories') ?>" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Back</a>
+                        <a href="<?= base_url('admin/stocks') ?>" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Back</a>
                     </div>
                     <div class="card-body">
                         <?php $errors = validation_errors() ?>
-                        <?= form_open('admin/categories/edit/' . $category['id']) ?>
+                        <?= form_open('admin/stocks/edit/' . $stock['id']) ?>
                         <?= csrf_field() ?>
                         <input type="hidden" name="_method" value="PUT">
                         <div class="form-group">
-                            <label for="title">Title</label>
-                            <input type="text" class="form-control <?= (isset($errors['title'])) ? 'is-invalid' : '' ?>" id="title" name="title" value="<?= $category['title'] ?>">
+                            <label>Product</label>
+                            <input type="text" class="form-control" readonly value="<?= $stock['id_product'] ?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="size">Size</label>
+                            <input type="number" class="form-control <?= (isset($errors['size'])) ? 'is-invalid' : '' ?>" id="size" name="size" value="<?= $stock['size'] ?>">
                             <div class="invalid-feedback">
-                                <?= validation_show_error('title') ?>
+                                <?= validation_show_error('size') ?>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="description">Description</label>
-                            <input type="text" class="form-control <?= (isset($errors['description'])) ? 'is-invalid' : '' ?>" id="description" name="description" value="<?= $category['description'] ?>">
+                            <label for="quantity">Quantity</label>
+                            <input type="number" class="form-control <?= (isset($errors['quantity'])) ? 'is-invalid' : '' ?>" id="quantity" name="quantity" value="<?= $stock['quantity'] ?>">
                             <div class="invalid-feedback">
-                                <?= validation_show_error('description') ?>
+                                <?= validation_show_error('quantity') ?>
                             </div>
                         </div>
                         <div class="form-group text-right">

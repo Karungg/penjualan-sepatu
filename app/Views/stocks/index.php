@@ -29,7 +29,7 @@ Stocks
                 <?php endif ?>
                 <div class="card">
                     <div class="card-header">
-                        <a href="<?= base_url('admin/stocks/add') ?>" class="btn btn-primary"><i class="fas fa-plus"></i> Add Category</a>
+                        <a href="<?= base_url('admin/stocks/add') ?>" class="btn btn-primary"><i class="fas fa-plus"></i> Add Stock</a>
                     </div>
                     <div class="card-body p-0">
                         <div class="table-responsive">
