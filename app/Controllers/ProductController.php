@@ -19,7 +19,7 @@ class ProductController extends BaseController
     public function index()
     {
         return view('products/index', [
-            'products' => $this->productModel->findAll(),
+            'products' => $this->productModel->getAll(),
             'current_page' => 'products'
         ]);
     }

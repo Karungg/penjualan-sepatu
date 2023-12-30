@@ -37,7 +37,7 @@ Products
                                 <tr>
                                     <th>No</th>
                                     <th>Product Name</th>
-                                    <th>Description</th>
+                                    <th>Category</th>
                                     <th>Product Price</th>
                                     <th>Image</th>
                                     <th>Action</th>
@@ -49,7 +49,7 @@ Products
                                     <tr>
                                         <td><?= $no++ ?></td>
                                         <td><?= word_limiter($product['product_name'], 5) ?></td>
-                                        <td><?= word_limiter($product['description'], 5) ?></td>
+                                        <td><?= word_limiter($product['title'], 5) ?></td>
                                         <td><?= $product['product_price'] ?></td>
                                         <td>
                                             <img src="<?= base_url('assets/img/' . $product['image']) ?>" alt="..." class="img-thumbnail" style="width: 50px;">

@@ -39,4 +39,13 @@ class Product extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getAll()
+    {
+        $builder = $this->db->table('products');
+        $builder->select('products.id, products.product_name, products.product_price, products.image, categories.title');
+        $builder->join('categories', 'categories.id = products.id_category');
+        $query = $builder->get();
+        return $query->getResultArray();
+    }
 }
