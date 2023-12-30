@@ -41,7 +41,23 @@
         <?php if (in_groups('user')) : ?>
             <ul class="nav__list">
                 <li class="nav__item">
+                    <span class="nav__link">Welcome <?= user()->username ?>!</span>
+                </li>
+                <li class="nav__item">
                     <a href="" class="nav__link">My Order</a>
+                </li>
+                <li class="nav__item">
+                    <a onclick="return confirm('Logout?')" href="<?= base_url('logout') ?>" class="nav__link">Logout</a>
+                </li>
+            </ul>
+        <?php endif ?>
+        <?php if (in_groups('admin')) : ?>
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <span class="nav__link">Welcome <?= user()->username ?>!</span>
+                </li>
+                <li class="nav__item">
+                    <a href="<?= base_url('admin') ?>" class="nav__link">Dashboard</a>
                 </li>
             </ul>
         <?php endif ?>
