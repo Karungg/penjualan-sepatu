@@ -34,7 +34,7 @@
                 </p>
             </div>
 
-            <a href="#spt-laki" class="button--link button--flex">
+            <a href="#produk" class="button--link button--flex">
                 Shop Now <i class="ri-arrow-right-down-line button__icon"></i>
             </a>
         </div>
