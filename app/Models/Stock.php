@@ -43,6 +43,7 @@ class Stock extends Model
     public function getAll()
     {
         $builder = $this->db->table('stocks');
+        $builder->select('stocks.id, stocks.size, stocks.quantity, products.product_name');
         $builder->join('products', 'products.id = stocks.id_product');
         $query = $builder->get();
         return $query->getResultArray();
