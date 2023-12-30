@@ -32,52 +32,39 @@ Stocks
                         <a href="<?= base_url('admin/stocks/add') ?>" class="btn btn-primary"><i class="fas fa-plus"></i> Add Stock</a>
                     </div>
                     <div class="card-body p-0">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-md text-center">
-                                <tr>
-                                    <th>No</th>
-                                    <th>Product</th>
-                                    <th>Size</th>
-                                    <th>Quantity</th>
-                                    <th>Action</th>
-                                </tr>
-                                <?php
-                                $no = 1;
-                                foreach ($stocks as $stock) : ?>
+                        <div class="table-responsive p-3">
+                            <table class="table table-md" id="table-1">
+                                <thead>
                                     <tr>
-                                        <td><?= $no++ ?></td>
-                                        <td><?= $stock['product_name'] ?></td>
-                                        <td><?= $stock['size'] ?></td>
-                                        <td><?= $stock['quantity'] ?></td>
-                                        <td>
-                                            <a href="<?= base_url('admin/stocks/edit/' . $stock['id']) ?>" class="btn btn-success">Edit</a>
-                                            <form action="<?= base_url('admin/stocks/delete/' . $stock['id']) ?>" method="post" class="d-inline" onsubmit="return confirm('Are You Sure?')">
-                                                <?= csrf_field() ?>
-                                                <input type="hidden" name="_method" value="DELETE">
-                                                <button type="submit" class="btn btn-danger">Delete</button>
-                                            </form>
-                                        </td>
+                                        <th>No</th>
+                                        <th>Product</th>
+                                        <th>Size</th>
+                                        <th>Quantity</th>
+                                        <th>Action</th>
                                     </tr>
-                                <?php endforeach ?>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $no = 1;
+                                    foreach ($stocks as $stock) : ?>
+                                        <tr>
+                                            <td><?= $no++ ?></td>
+                                            <td><?= $stock['product_name'] ?></td>
+                                            <td><?= $stock['size'] ?></td>
+                                            <td><?= $stock['quantity'] ?></td>
+                                            <td>
+                                                <a href="<?= base_url('admin/stocks/edit/' . $stock['id']) ?>" class="btn btn-success">Edit</a>
+                                                <form action="<?= base_url('admin/stocks/delete/' . $stock['id']) ?>" method="post" class="d-inline" onsubmit="return confirm('Are You Sure?')">
+                                                    <?= csrf_field() ?>
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach ?>
+                                </tbody>
                             </table>
                         </div>
-                    </div>
-                    <div class="card-footer text-right">
-                        <nav class="d-inline-block">
-                            <ul class="pagination mb-0">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-                                </li>
-                                <li class="page-item active"><a class="page-link" href="#">1 <span class="sr-only">(current)</span></a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">2</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                                </li>
-                            </ul>
-                        </nav>
                     </div>
                 </div>
             </div>

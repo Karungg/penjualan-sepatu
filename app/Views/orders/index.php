@@ -15,6 +15,8 @@ Orders
     </div>
 
     <div class="section-body">
+        <div class="card-body">
+        </div>
     </div>
 </section>
 <?= $this->endSection('content'); ?>

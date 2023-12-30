@@ -3,7 +3,9 @@
 <?= $this->section('content'); ?>
 <!-- =============Produk================ -->
 <section class="spt__laki section container" id="produk">
-
+    <h2 class="section__judul-center">
+        Produk
+    </h2>
     <main class="main1 bd-grid">
         <?php foreach ($products as $product) : ?>
             <article class="produk">

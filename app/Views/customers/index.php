@@ -29,49 +29,36 @@ Customers
                 <?php endif ?>
                 <div class="card">
                     <div class="card-body p-0">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-md text-center">
-                                <tr>
-                                    <th>No</th>
-                                    <th>Full Name</th>
-                                    <th>Email</th>
-                                    <th>Address</th>
-                                    <th>Phone</th>
-                                    <th>Action</th>
-                                </tr>
-                                <?php
-                                $no = 1;
-                                foreach ($customers as $customer) : ?>
+                        <div class="table-responsive p-3">
+                            <table class="table table-md" id="table-1">
+                                <thead>
                                     <tr>
-                                        <td><?= $no++ ?></td>
-                                        <td><?= $customer->fullname ?></td>
-                                        <td><?= $customer->email ?></td>
-                                        <td><?= $customer->address ?></td>
-                                        <td><?= $customer->phone ?></td>
-                                        <td>
-                                            <a class="btn btn-success" href="<?= base_url('admin/customers/detail/' . $customer->id) ?>">Detail</a>
-                                        </td>
+                                        <th>No</th>
+                                        <th>Full Name</th>
+                                        <th>Email</th>
+                                        <th>Address</th>
+                                        <th>Phone</th>
+                                        <th>Action</th>
                                     </tr>
-                                <?php endforeach ?>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $no = 1;
+                                    foreach ($customers as $customer) : ?>
+                                        <tr>
+                                            <td><?= $no++ ?></td>
+                                            <td><?= $customer->fullname ?></td>
+                                            <td><?= $customer->email ?></td>
+                                            <td><?= $customer->address ?></td>
+                                            <td><?= $customer->phone ?></td>
+                                            <td>
+                                                <a class="btn btn-success" href="<?= base_url('admin/customers/detail/' . $customer->id) ?>">Detail</a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach ?>
+                                </tbody>
                             </table>
                         </div>
-                    </div>
-                    <div class="card-footer text-right">
-                        <nav class="d-inline-block">
-                            <ul class="pagination mb-0">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-                                </li>
-                                <li class="page-item active"><a class="page-link" href="#">1 <span class="sr-only">(current)</span></a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">2</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                                </li>
-                            </ul>
-                        </nav>
                     </div>
                 </div>
             </div>
