@@ -19,14 +19,16 @@ class ProductController extends BaseController
     public function index()
     {
         return view('products/index', [
-            'products' => $this->productModel->findAll()
+            'products' => $this->productModel->findAll(),
+            'current_page' => 'products'
         ]);
     }
 
     public function create()
     {
         return view('products/create', [
-            'categories' => $this->categoryModel->findAll()
+            'categories' => $this->categoryModel->findAll(),
+            'current_page' => 'products'
         ]);
     }
 
@@ -65,7 +67,8 @@ class ProductController extends BaseController
     {
         return view('products/edit', [
             'product' => $this->productModel->find($id),
-            'categories' => $this->categoryModel->findAll()
+            'categories' => $this->categoryModel->findAll(),
+            'current_page' => 'products'
         ]);
     }
 

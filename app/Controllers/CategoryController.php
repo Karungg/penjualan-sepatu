@@ -17,13 +17,16 @@ class CategoryController extends BaseController
     public function index()
     {
         return view('categories/index', [
-            'categories' => $this->categoryModel->findAll()
+            'categories' => $this->categoryModel->findAll(),
+            'current_page' => 'categories'
         ]);
     }
 
     public function create()
     {
-        return view('categories/create');
+        return view('categories/create', [
+            'current_page' => 'categories'
+        ]);
     }
 
     public function store()
@@ -52,7 +55,8 @@ class CategoryController extends BaseController
     public function edit($id)
     {
         return view('categories/edit', [
-            'category' => $this->categoryModel->find($id)
+            'category' => $this->categoryModel->find($id),
+            'current_page' => 'categories'
         ]);
     }
 

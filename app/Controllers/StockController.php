@@ -19,14 +19,16 @@ class StockController extends BaseController
     public function index()
     {
         return view('stocks/index', [
-            'stocks' => $this->stockModel->getAll()
+            'stocks' => $this->stockModel->getAll(),
+            'current_page' => 'stocks'
         ]);
     }
 
     public function create()
     {
         return view('stocks/create', [
-            'products' => $this->productModel->findAll()
+            'products' => $this->productModel->findAll(),
+            'current_page' => 'stocks'
         ]);
     }
 
@@ -58,7 +60,8 @@ class StockController extends BaseController
     public function edit($id)
     {
         return view('stocks/edit', [
-            'stock' => $this->stockModel->find($id)
+            'stock' => $this->stockModel->find($id),
+            'current_page' => 'stocks'
         ]);
     }
 
