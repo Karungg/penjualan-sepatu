@@ -1,16 +1,16 @@
 <?= $this->extend('layouts/dashboard'); ?>
 
 <?= $this->section('title'); ?>
-Products
+Stocks
 <?= $this->endSection('title'); ?>
 
 <?= $this->section('content'); ?>
 <section class="section">
     <div class="section-header">
-        <h1>Products</h1>
+        <h1>Stocks</h1>
         <div class="section-header-breadcrumb">
             <div class="breadcrumb-item active"><a href="<?= base_url('admin') ?>">Dashboard</a></div>
-            <div class="breadcrumb-item">Products</div>
+            <div class="breadcrumb-item">Stocks</div>
         </div>
     </div>
 
@@ -29,34 +29,29 @@ Products
                 <?php endif ?>
                 <div class="card">
                     <div class="card-header">
-                        <a href="<?= base_url('admin/products/add') ?>" class="btn btn-primary"><i class="fas fa-plus"></i> Add Product</a>
+                        <a href="<?= base_url('admin/stocks/add') ?>" class="btn btn-primary"><i class="fas fa-plus"></i> Add Category</a>
                     </div>
                     <div class="card-body p-0">
                         <div class="table-responsive">
                             <table class="table table-striped table-md text-center">
                                 <tr>
                                     <th>No</th>
-                                    <th>Product Name</th>
-                                    <th>Description</th>
-                                    <th>Product Price</th>
-                                    <th>Image</th>
+                                    <th>Product</th>
+                                    <th>Size</th>
+                                    <th>Quantity</th>
                                     <th>Action</th>
                                 </tr>
                                 <?php
                                 $no = 1;
-                                foreach ($products as $product) :
-                                ?>
+                                foreach ($stocks as $stock) : ?>
                                     <tr>
                                         <td><?= $no++ ?></td>
-                                        <td><?= word_limiter($product['product_name'], 5) ?></td>
-                                        <td><?= word_limiter($product['description'], 5) ?></td>
-                                        <td><?= $product['product_price'] ?></td>
+                                        <td><?= $stock['id_product'] ?></td>
+                                        <td><?= $stock['size'] ?></td>
+                                        <td><?= $stock['quantity'] ?></td>
                                         <td>
-                                            <img src="<?= base_url('assets/img/' . $product['image']) ?>" alt="..." class="img-thumbnail" style="width: 50px;">
-                                        </td>
-                                        <td>
-                                            <a class="btn btn-success" href="<?= base_url('admin/products/edit/' . $product['id']) ?>">Edit</a>
-                                            <form action="<?= base_url('admin/products/delete/' . $product['id']) ?>" method="post" class="d-inline" onsubmit="return confirm('Are You Sure?')">
+                                            <a href="<?= base_url('admin/stocks/edit/' . $stock['id']) ?>" class="btn btn-success">Edit</a>
+                                            <form action="<?= base_url('admin/stocks/delete/' . $stock['id']) ?>" method="post" class="d-inline" onsubmit="return confirm('Are You Sure?')">
                                                 <?= csrf_field() ?>
                                                 <input type="hidden" name="_method" value="DELETE">
                                                 <button type="submit" class="btn btn-danger">Delete</button>

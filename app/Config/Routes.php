@@ -28,6 +28,15 @@ $routes->group('admin/products', ['filter' => 'role:admin', 'login'], static fun
     $routes->delete('delete/(:num)', [\App\Controllers\ProductController::class, 'delete/$1']);
 });
 
+$routes->group('admin/stocks', ['filter' => 'role:admin', 'login'], static function ($routes) {
+    $routes->get('', [\App\Controllers\StockController::class, 'index']);
+    $routes->get('add', [\App\Controllers\StockController::class, 'create']);
+    $routes->post('add', [\App\Controllers\StockController::class, 'store']);
+    $routes->get('edit/(:num)', [\App\Controllers\StockController::class, 'edit']);
+    $routes->put('edit/(:num)', [\App\Controllers\StockController::class, 'update']);
+    $routes->delete('delete/(:num)', [\App\Controllers\StockController::class, 'delete/$1']);
+});
+
 $routes->group('admin/customers', ['filter' => 'role:admin', 'login'], static function ($routes) {
     $routes->get('', [\App\Controllers\UserController::class, 'index']);
     $routes->get('detail/(:num)', [\App\Controllers\UserController::class, 'show/$1']);

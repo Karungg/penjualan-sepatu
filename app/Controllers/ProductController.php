@@ -8,7 +8,7 @@ class ProductController extends BaseController
 {
     protected $categoryModel;
     protected $productModel;
-    protected $helpers = ['form'];
+    protected $helpers = ['form', 'text'];
 
     public function __construct()
     {

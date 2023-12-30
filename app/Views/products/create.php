@@ -56,10 +56,6 @@ Add Product
                                 <?php endforeach ?>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label>Image</label>
-                            <input type="file" class="form-control" name="image">
-                        </div>
                         <div class="form-group text-right">
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
