@@ -39,7 +39,7 @@ class ProductController extends BaseController
         }
 
         if (!$this->validate([
-            'product_name' => 'required|min_length[4]',
+            'product_name' => 'required|min_length[4]|is_unique[products.product_name]',
             'description' => 'required|min_length[4]',
             'product_price' => 'required|min_length[4]',
             'image' => 'uploaded[image]|mime_in[image,image/jpg,image/jpeg,image/png]|max_size[image,4096]'
@@ -55,7 +55,7 @@ class ProductController extends BaseController
             'description' => $this->request->getPost('description'),
             'product_price' => $this->request->getPost('product_price'),
             'id_category' => $this->request->getPost('id_category'),
-            'image' => $upload->getName(),
+            'image' => mt_rand(0, 999) . $upload->getName(),
         ];
 
         $this->productModel->insert($data);
@@ -79,7 +79,7 @@ class ProductController extends BaseController
         }
 
         if (!$this->validate([
-            'product_name' => 'required|min_length[4]',
+            'product_name' => 'required|min_length[4]|is_unique[products.product_name]',
             'description' => 'required|min_length[4]',
             'product_price' => 'required|min_length[4]',
             'image' => 'uploaded[image]|mime_in[image,image/jpg,image/jpeg,image/png]|max_size[image,4096]'
