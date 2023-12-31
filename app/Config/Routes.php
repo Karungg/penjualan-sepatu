@@ -5,8 +5,9 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
-$routes->get('/products', 'Home::products');
+$routes->get('/', [\App\Controllers\Home::class, 'index']);
+$routes->get('/products', [\App\Controllers\Home::class, 'products']);
+$routes->get('/products/detail/(:num)', [\App\Controllers\Home::class, 'detail/$1']);
 
 
 $routes->get('admin', 'DashboardController::index', ['filter' => 'role:admin', 'login']);
@@ -38,11 +39,11 @@ $routes->group('admin/stocks', ['filter' => 'role:admin', 'login'], static funct
     $routes->delete('delete/(:num)', [\App\Controllers\StockController::class, 'delete/$1']);
 });
 
-$routes->group('admin/orders', ['filter' => 'role:admin', 'login'], static function ($routes) {
-    $routes->get('', [\App\Controllers\OrderController::class, 'index']);
-});
-
 $routes->group('admin/customers', ['filter' => 'role:admin', 'login'], static function ($routes) {
     $routes->get('', [\App\Controllers\UserController::class, 'index']);
     $routes->get('detail/(:num)', [\App\Controllers\UserController::class, 'show/$1']);
+});
+
+$routes->group('admin/orders', ['filter' => 'role:admin', 'login'], static function ($routes) {
+    $routes->get('', [\App\Controllers\OrderController::class, 'index']);
 });
