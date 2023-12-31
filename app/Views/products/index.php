@@ -53,7 +53,7 @@ Products
                                             <td><?= $no++ ?></td>
                                             <td><?= word_limiter($product['product_name'], 5) ?></td>
                                             <td><?= word_limiter($product['title'], 5) ?></td>
-                                            <td><?= $product['product_price'] ?></td>
+                                            <td><?= number_format($product['product_price']) ?></td>
                                             <td>
                                                 <img src="<?= base_url('assets/img/' . $product['image']) ?>" alt="..." class="img-thumbnail" style="width: 50px;">
                                             </td>
